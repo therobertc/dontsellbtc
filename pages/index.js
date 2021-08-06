@@ -34,81 +34,89 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Dont Sell BTC</h1>
+      <div
+        style={{
+          backgroundColor: "#FFF",
+        }}
+      >
+        <main className={styles.main}>
+          <h1 className={styles.title}>Dont Sell BTC</h1>
 
-        <p className={styles.description}>
-          Find out how much passive income you can make
-        </p>
-
-        <div>
-          <div>
-            <p>How much passive BTC income do you want?</p>
-            <input
-              className={styles.input}
-              id="yearlyIncome"
-              placeholder="$100,000"
-              type="number"
-              onChange={(e) => {
-                if (e.target.value === "") {
-                  setYearlyIncome(0);
-                } else {
-                  setYearlyIncome(e.target.value);
-                }
-              }}
-            ></input>
-          </div>
+          <p className={styles.description}>
+            Find out how much passive income you can make
+          </p>
 
           <div>
-            <p>What do you think the price of Bitcoin will be?</p>
-            <input
-              className={styles.input}
-              id="priceBTC"
-              placeholder="$100,000,000"
-              type="number"
-              onChange={(e) => {
-                if (e.target.value === "") {
-                  setPriceBTC(0);
-                } else {
-                  setPriceBTC(e.target.value);
-                }
-              }}
-            ></input>
-          </div>
-          <div>
-            <p>Estimated interest rates</p>
-            <input
-              className={styles.input}
-              id="interestRate"
-              placeholder="5%"
-              type="number"
-              onChange={(e) => {
-                if (e.target.value === "") {
-                  setInterestRate(0);
-                } else {
-                  setInterestRate(e.target.value);
-                }
-              }}
-            ></input>
-          </div>
+            <div>
+              <p>How much passive BTC income do you want?</p>
+              <input
+                className={styles.input}
+                id="yearlyIncome"
+                placeholder="$100,000"
+                type="number"
+                onChange={(e) => {
+                  if (e.target.value === "") {
+                    setYearlyIncome(0);
+                  } else {
+                    setYearlyIncome(e.target.value);
+                  }
+                }}
+              ></input>
+            </div>
 
-          <div>
-            <p>Amount of BTC you need</p>
-            <input
-              className={styles.input}
-              id="amountBTC"
-              // placeholder="100 BTC"
-              type="number"
-              value={netValue}
-              readOnly
-            ></input>
-          </div>
+            <div>
+              <p>What do you think the price of Bitcoin will be?</p>
+              <input
+                className={styles.input}
+                id="priceBTC"
+                placeholder="$100,000,000"
+                type="number"
+                onChange={(e) => {
+                  if (e.target.value === "") {
+                    setPriceBTC(0);
+                  } else {
+                    setPriceBTC(e.target.value);
+                  }
+                }}
+              ></input>
+            </div>
+            <div>
+              <p>Estimated interest rates</p>
+              <input
+                className={styles.input}
+                id="interestRate"
+                placeholder="5%"
+                type="number"
+                onChange={(e) => {
+                  if (e.target.value === "") {
+                    setInterestRate(0);
+                  } else {
+                    setInterestRate(e.target.value);
+                  }
+                }}
+              ></input>
+            </div>
 
-          <button className={styles.button}>
-            <p className={styles.buttontxt}>CALCULATE PASSIVE INCOME</p>
-          </button>
-        </div>
-      </main>
+            <div>
+              <p style={{ textAlign: "center" }}>Amount of BTC you need</p>
+              {/* <input
+                className={styles.answer}
+                id="amountBTC"
+                // placeholder="100 BTC"
+                type="number"
+                value={netValue}
+                readOnly
+              ></input> */}
+
+              <p className={styles.answer}>{netValue}</p>
+            </div>
+
+            {/* <button className={styles.button}>
+              <p className={styles.buttontxt}>CALCULATE PASSIVE INCOME</p>
+            </button> */}
+          </div>
+        </main>
+      </div>
 
       <footer className={styles.footer}>
         <a
