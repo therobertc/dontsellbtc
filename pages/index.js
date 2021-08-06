@@ -113,9 +113,6 @@ export default function Home() {
       {/* <p className={styles.answer}>{netValue}</p>
             </div> */}
 
-      {/* <button className={styles.button}>
-              <p className={styles.buttontxt}>CALCULATE PASSIVE INCOME</p>
-            </button> */}
       {/* </div>
         </main>
       </div> */}
@@ -206,10 +203,14 @@ export default function Home() {
 
         <p>
           Alright, so given the numbers you’ve stated -- you would need to
-          accumulate<span className={styles.logo}>~{netValue}</span> Bitcoins in
-          order to live completely on your Bitcoin income without ever selling
-          your coins.
+          accumulate<span className={styles.logo}>~{netValue * 100}</span>{" "}
+          Bitcoins in order to live completely on your Bitcoin income without
+          ever selling your coins.
         </p>
+
+        <button className={styles.button}>
+          <p className={styles.buttontxt}>Get Started</p>
+        </button>
       </div>
 
       <footer className={styles.footer}>
