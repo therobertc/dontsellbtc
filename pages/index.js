@@ -34,13 +34,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
+      {/* <div
         style={{
           backgroundColor: "#FFF",
+
+          borderColor: "#000",
         }}
       >
         <main className={styles.main}>
-          <h1 className={styles.title}>Dont Sell BTC</h1>
+          <h1 className={styles.title}>Don't Sell BTC</h1>
 
           <p className={styles.description}>
             Find out how much passive income you can make
@@ -108,14 +110,106 @@ export default function Home() {
                 readOnly
               ></input> */}
 
-              <p className={styles.answer}>{netValue}</p>
-            </div>
+      {/* <p className={styles.answer}>{netValue}</p>
+            </div> */}
 
-            {/* <button className={styles.button}>
+      {/* <button className={styles.button}>
               <p className={styles.buttontxt}>CALCULATE PASSIVE INCOME</p>
             </button> */}
-          </div>
+      {/* </div>
         </main>
+      </div> */}
+
+      <div
+        style={{
+          width: "100%",
+          padding: 20,
+          backgroundColor: "#FFF",
+        }}
+      >
+        <h1>How to accumulate as much Bitcoin as possible.</h1>
+        <p>~1 minute</p>
+
+        <p>Figure out how much Bitcoin you need.</p>
+
+        <p>
+          The idea is to never sell your Bitcoin, but rather loan it out & use
+          the interest as passive income so you can live a fulfilling life &
+          still keep your Bitcoin forever.
+        </p>
+
+        <h1>Quick Explanation:</h1>
+
+        <p>
+          As Bitcoin grows in adoption, people & institutions will need to take
+          out loans denominated in Bitcoin. You will be paid interest for taking
+          that risk. Today, many of the options available may be too risky to
+          trust your precious Bitcoin with, but as time passes safer solutions
+          will be created.
+        </p>
+
+        <h1>
+          1: How much money do you want to earn passively from your Bitcoin
+          holdings every year?
+        </h1>
+
+        <input
+          className={styles.input}
+          id="yearlyIncome"
+          placeholder="$100,000"
+          type="number"
+          onChange={(e) => {
+            if (e.target.value === "") {
+              setYearlyIncome(0);
+            } else {
+              setYearlyIncome(e.target.value);
+            }
+          }}
+        ></input>
+
+        <h1>
+          2: What do you think the price of Bitcoin will be in 5-10 years?
+        </h1>
+
+        <input
+          className={styles.input}
+          id="priceBTC"
+          placeholder="$100,000,000"
+          type="number"
+          onChange={(e) => {
+            if (e.target.value === "") {
+              setPriceBTC(0);
+            } else {
+              setPriceBTC(e.target.value);
+            }
+          }}
+        ></input>
+
+        <p>
+          And finally, we’re just going to use the average American interest
+          rate for loaning out gold -- which is 8.5%.
+        </p>
+
+        <input
+          className={styles.input}
+          id="interestRate"
+          placeholder="8.5%"
+          type="number"
+          onChange={(e) => {
+            if (e.target.value === "") {
+              setInterestRate(0);
+            } else {
+              setInterestRate(e.target.value);
+            }
+          }}
+        ></input>
+
+        <p>
+          Alright, so given the numbers you’ve stated -- you would need to
+          accumulate<span className={styles.logo}>~{netValue}</span> Bitcoins in
+          order to live completely on your Bitcoin income without ever selling
+          your coins.
+        </p>
       </div>
 
       <footer className={styles.footer}>
