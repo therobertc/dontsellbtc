@@ -1,8 +1,31 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [yearlyIncome, setYearlyIncome] = useState(0);
+  const [priceBTC, setPriceBTC] = useState(0);
+  const [interestRate, setInterestRate] = useState(0);
+  const [netValue, setNetValue] = useState(0);
+
+  const calculate = () => {
+    let cal_1 = parseFloat(priceBTC) * parseFloat(interestRate);
+    let cal_2 = parseFloat(yearlyIncome) / cal_1;
+    if (cal_2 === 0) {
+      setNetValue(0);
+    } else {
+      setNetValue(cal_2);
+    }
+  };
+
+  useEffect(() => {
+    if ((yearlyIncome && priceBTC && interestRate) === 0) {
+      setNetValue(0);
+    } else {
+      calculate();
+    }
+  }, [yearlyIncome, priceBTC, interestRate]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +48,14 @@ export default function Home() {
               className={styles.input}
               id="yearlyIncome"
               placeholder="$100,000"
+              type="number"
+              onChange={(e) => {
+                if (e.target.value === "") {
+                  setYearlyIncome(0);
+                } else {
+                  setYearlyIncome(e.target.value);
+                }
+              }}
             ></input>
           </div>
 
@@ -34,6 +65,14 @@ export default function Home() {
               className={styles.input}
               id="priceBTC"
               placeholder="$100,000,000"
+              type="number"
+              onChange={(e) => {
+                if (e.target.value === "") {
+                  setPriceBTC(0);
+                } else {
+                  setPriceBTC(e.target.value);
+                }
+              }}
             ></input>
           </div>
           <div>
@@ -42,6 +81,14 @@ export default function Home() {
               className={styles.input}
               id="interestRate"
               placeholder="5%"
+              type="number"
+              onChange={(e) => {
+                if (e.target.value === "") {
+                  setInterestRate(0);
+                } else {
+                  setInterestRate(e.target.value);
+                }
+              }}
             ></input>
           </div>
 
@@ -50,7 +97,10 @@ export default function Home() {
             <input
               className={styles.input}
               id="amountBTC"
-              placeholder="100 BTC"
+              // placeholder="100 BTC"
+              type="number"
+              value={netValue}
+              readOnly
             ></input>
           </div>
 
