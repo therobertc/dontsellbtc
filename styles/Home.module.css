@@ -9,7 +9,7 @@
 }
 
 .main {
-  padding: 3rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
 }
 
 .description {
-  line-height: 1.5;
+  line-height: 1;
   font-size: 1.5rem;
 }
 
@@ -75,7 +75,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-  margin-top: 3rem;
+  margin-top: 1rem;
   flex-direction: "column";
   flex: 1;
 }
@@ -83,6 +83,31 @@
 .input {
   padding: 0.8rem;
   width: 100%;
+  border-bottom-width: 5px;
+  border-bottom-color: black;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.button {
+  padding: 0.8rem;
+  width: 100%;
+  border-color: orange;
+  border-width: 3px;
+  border-left: black;
+  border-right: black;
+  border-top: black;
+  border-bottom-width: 5px;
+  border-bottom-color: black;
+  border-radius: 10px;
+  margin-top: 30px;
+  background-color: orange;
+}
+
+.buttontxt {
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .card {
