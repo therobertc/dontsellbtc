@@ -124,7 +124,7 @@ export default function Home() {
           backgroundColor: "#FFF",
         }}
       >
-        <h1>How to accumulate as much Bitcoin as possible.</h1>
+        <h1>How to never sell Bitcoin.</h1>
         <p>~1 minute</p>
 
         <p>Figure out how much Bitcoin you need.</p>
@@ -203,9 +203,9 @@ export default function Home() {
 
         <p>
           Alright, so given the numbers you’ve stated -- you would need to
-          accumulate<span className={styles.logo}>~{netValue * 100}</span>{" "}
-          Bitcoins in order to live completely on your Bitcoin income without
-          ever selling your coins.
+          accumulate<h1>~{(netValue * 100).toFixed(2)}</h1> Bitcoins in order to
+          live completely on your Bitcoin income without ever selling your
+          coins.
         </p>
 
         <button className={styles.button}>
