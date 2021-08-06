@@ -66,7 +66,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by<span className={styles.logo}>Rohun</span>
+          Sponsored by<span className={styles.logo}>Rohun</span>
         </a>
       </footer>
     </div>
