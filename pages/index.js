@@ -21,21 +21,21 @@ export default function Home() {
         <div>
           <div>
             <p>How much passive BTC income do you want?</p>
-            <input id="yearlyIncome"></input>
+            <input className={styles.input} id="yearlyIncome"></input>
           </div>
 
           <div>
             <p>What do you think the price of Bitcoin will be?</p>
-            <input id="priceBTC"></input>
+            <input className={styles.input} id="priceBTC"></input>
           </div>
           <div>
             <p>Estimated interest rates</p>
-            <input id="interestRate"></input>
+            <input className={styles.input} id="interestRate"></input>
           </div>
 
           <div>
             <p>Amount of BTC you need</p>
-            <input id="amountBTC"></input>
+            <input className={styles.input} id="amountBTC"></input>
           </div>
         </div>
       </main>
