@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import InputSlider from "../components/InputSlider";
 
 export default function Home() {
   const [yearlyIncome, setYearlyIncome] = useState(0);
@@ -29,198 +30,57 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Don't Sell BTC</title>
+        <title>$NERDS</title>
         <meta name="description" content="Thx Satoshi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/* <div
-        style={{
-          backgroundColor: "#FFF",
-
-          borderColor: "#000",
-        }}
-      >
-        <main className={styles.main}>
-          <h1 className={styles.title}>Don't Sell BTC</h1>
-
-          <p className={styles.description}>
-            Find out how much passive income you can make
-          </p>
-
-          <div>
-            <div>
-              <p>How much passive BTC income do you want?</p>
-              <input
-                className={styles.input}
-                id="yearlyIncome"
-                placeholder="$100,000"
-                type="number"
-                onChange={(e) => {
-                  if (e.target.value === "") {
-                    setYearlyIncome(0);
-                  } else {
-                    setYearlyIncome(e.target.value);
-                  }
-                }}
-              ></input>
-            </div>
-
-            <div>
-              <p>What do you think the price of Bitcoin will be?</p>
-              <input
-                className={styles.input}
-                id="priceBTC"
-                placeholder="$100,000,000"
-                type="number"
-                onChange={(e) => {
-                  if (e.target.value === "") {
-                    setPriceBTC(0);
-                  } else {
-                    setPriceBTC(e.target.value);
-                  }
-                }}
-              ></input>
-            </div>
-            <div>
-              <p>Estimated interest rates</p>
-              <input
-                className={styles.input}
-                id="interestRate"
-                placeholder="5%"
-                type="number"
-                onChange={(e) => {
-                  if (e.target.value === "") {
-                    setInterestRate(0);
-                  } else {
-                    setInterestRate(e.target.value);
-                  }
-                }}
-              ></input>
-            </div>
-
-            <div>
-              <p style={{ textAlign: "center" }}>Amount of BTC you need</p>
-              {/* <input
-                className={styles.answer}
-                id="amountBTC"
-                // placeholder="100 BTC"
-                type="number"
-                value={netValue}
-                readOnly
-              ></input> */}
-
-      {/* <p className={styles.answer}>{netValue}</p>
-            </div> */}
-
-      {/* </div>
-        </main>
-      </div> */}
 
       <div
         style={{
           width: "100%",
           padding: 20,
-          backgroundColor: "#FFF",
+          //backgroundColor: "#FFF",
         }}
       >
-        <h1>How to never sell Bitcoin.</h1>
-        <p>~1 minute</p>
-
-        <p>Figure out how much Bitcoin you need.</p>
-
-        <p>
-          The idea is to never sell your Bitcoin, but rather loan it out & use
-          the interest as passive income so you can live a fulfilling life &
-          still keep your Bitcoin forever.
-        </p>
-
-        <h1>Quick Explanation:</h1>
-
-        <p>
-          As Bitcoin grows in adoption, people & institutions will need to take
-          out loans denominated in Bitcoin. You will be paid interest for taking
-          that risk. Today, many of the options available may be too risky to
-          trust your precious Bitcoin with, but as time passes safer solutions
-          will be created.
-        </p>
-
-        <h1>
-          1: How much money do you want to earn passively from your Bitcoin
-          holdings every year?
+        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 80 }}>
+          NERDS ON THE BLOCKCHAIN
         </h1>
 
-        <input
-          className={styles.input}
-          id="yearlyIncome"
-          placeholder="$100,000"
-          type="number"
-          onChange={(e) => {
-            if (e.target.value === "") {
-              setYearlyIncome(0);
-            } else {
-              setYearlyIncome(e.target.value);
-            }
-          }}
-        ></input>
+        {/* <img
+          style={{ height: 200, width: 500 }}
+          src={require("../img/gravel.png")}
+        /> */}
 
-        <h1>
-          2: What do you think the price of Bitcoin will be in 5-10 years?
+        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 80 }}>
+          WHAT ARE NERDS?
         </h1>
 
-        <input
-          className={styles.input}
-          id="priceBTC"
-          placeholder="$100,000,000"
-          type="number"
-          onChange={(e) => {
-            if (e.target.value === "") {
-              setPriceBTC(0);
-            } else {
-              setPriceBTC(e.target.value);
-            }
+        <p
+          style={{
+            color: "#FFF",
+            textAlign: "center",
+            fontSize: 30,
+            paddingLeft: 100,
+            paddingRight: 100,
           }}
-        ></input>
-
-        <p>
-          And finally, we’re just going to use the average American interest
-          rate for loaning out gold -- which is 8.5%.
-        </p>
-
-        <input
-          className={styles.input}
-          id="interestRate"
-          placeholder="8.5%"
-          type="number"
-          onChange={(e) => {
-            if (e.target.value === "") {
-              setInterestRate(0);
-            } else {
-              setInterestRate(e.target.value);
-            }
-          }}
-        ></input>
-
-        <p>
-          Alright, so given the numbers you’ve stated -- you would need to
-          accumulate<h1>~{(netValue * 100).toFixed(2)}</h1> Bitcoins in order to
-          live completely on your Bitcoin income without ever selling your
-          coins.
+        >
+          NERDS ARE A COLLECTION OF 2500 NFTS ON THE ETHEREUM BLOCKCHAIN. EACH
+          NFT IS 0.05 ETH TO MINT. YOU CAN MINT MAX 30 NFTS AT A TIME.
         </p>
 
         <button className={styles.button}>
-          <p className={styles.buttontxt}>Get Started</p>
+          <p className={styles.buttontxt}>MINT NERDS</p>
         </button>
       </div>
 
       <footer className={styles.footer}>
-        <a
+        {/* <a
           href="https://twitter.com/rohunvora"
           target="_blank"
           rel="noopener noreferrer"
         >
           Sponsored by<span className={styles.logo}>Rohun</span>
-        </a>
+        </a> */}
       </footer>
     </div>
   );
