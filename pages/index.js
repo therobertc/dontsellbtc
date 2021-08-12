@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import InputSlider from "../components/InputSlider";
+import Image from "next/image";
+import profilePic from "../public/punks.png";
+
+// import gif from "https://gravelnfts.com/static/media/gravel.3d4e469e.gif";
 
 export default function Home() {
   const [yearlyIncome, setYearlyIncome] = useState(0);
@@ -36,52 +40,57 @@ export default function Home() {
       </Head>
 
       <div
-        style={{
-          width: "100%",
-          padding: 20,
-          //backgroundColor: "#FFF",
-        }}
+        style={
+          {
+            // width: "100%",
+            //padding: 20,
+            //backgroundColor: "#FFF",
+          }
+        }
       >
-        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 80 }}>
-          NERDS ON THE BLOCKCHAIN
+        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 35 }}>
+          SLOTHS ON THE BLOCKCHAIN
         </h1>
 
-        {/* <img
-          style={{ height: 200, width: 500 }}
-          src={require("../img/gravel.png")}
-        /> */}
+        <Image
+          src={profilePic}
+          alt="Picture of the author"
+          style={{ width: "100%" }}
+        />
 
-        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 80 }}>
-          WHAT ARE NERDS?
+        <h1 style={{ color: "#FFF", textAlign: "center", fontSize: 35 }}>
+          WHAT ARE SLOTHS?
         </h1>
 
         <p
           style={{
             color: "#FFF",
             textAlign: "center",
-            fontSize: 30,
-            paddingLeft: 100,
-            paddingRight: 100,
+            fontSize: 20,
+            paddingLeft: 30,
+            paddingRight: 30,
           }}
         >
-          NERDS ARE A COLLECTION OF 2500 NFTS ON THE ETHEREUM BLOCKCHAIN. EACH
+          SLOTHS ARE A COLLECTION OF 2500 NFTS ON THE ETHEREUM BLOCKCHAIN. EACH
           NFT IS 0.05 ETH TO MINT. YOU CAN MINT MAX 30 NFTS AT A TIME.
         </p>
 
-        <button className={styles.button}>
-          <p className={styles.buttontxt}>MINT NERDS</p>
-        </button>
+        <div style={{ justifyContent: "center", display: "flex", padding: 10 }}>
+          <button className={styles.button}>
+            <p className={styles.buttontxt}>MINT SLOTHS</p>
+          </button>
+        </div>
       </div>
 
-      <footer className={styles.footer}>
-        {/* <a
+      {/* <footer className={styles.footer}> */}
+      {/* <a
           href="https://twitter.com/rohunvora"
           target="_blank"
           rel="noopener noreferrer"
         >
           Sponsored by<span className={styles.logo}>Rohun</span>
         </a> */}
-      </footer>
+      {/* </footer> */}
     </div>
   );
 }
